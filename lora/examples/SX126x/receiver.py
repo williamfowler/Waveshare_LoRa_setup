@@ -14,9 +14,9 @@ if not LoRa.begin(busId, csId, resetPin, busyPin, irqPin, txenPin, rxenPin) :
     raise Exception("Something wrong, can't begin LoRa radio")
 
 LoRa.setDio2RfSwitch()
-# Set frequency to 868 Mhz
-print("Set frequency to 868 Mhz")
-LoRa.setFrequency(868000000)
+# Set frequency to 915 Mhz
+print("Set frequency to 915 Mhz")
+LoRa.setFrequency(915000000)
 
 # Set RX gain. RX gain option are power saving gain or boosted gain
 print("Set RX gain to power saving gain")
