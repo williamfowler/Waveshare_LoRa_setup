@@ -8,16 +8,16 @@ import struct
 
 # Begin LoRa radio and set NSS, reset, busy, IRQ, txen, and rxen pin with connected Raspberry Pi gpio pins
 busId = 0; csId = 0 
-resetPin = 18; busyPin = 20; irqPin = 16; txenPin = 6; rxenPin = -1 
+resetPin = 18; busyPin = 20; irqPin = -1; txenPin = 6; rxenPin = -1 
 LoRa = SX126x()
 print("Begin LoRa radio")
 if not LoRa.begin(busId, csId, resetPin, busyPin, irqPin, txenPin, rxenPin) :
     raise Exception("Something wrong, can't begin LoRa radio")
 
 LoRa.setDio2RfSwitch()
-# Set frequency to 868 Mhz
-LoRa.setFrequency(868000000)
-print("Set frequency to 868 Mhz")
+# Set frequency to 8915 Mhz
+LoRa.setFrequency(915000000)
+print("Set frequency to 915 Mhz")
 
 # Set RX gain to boosted gain
 LoRa.setRxGain(LoRa.RX_GAIN_BOOSTED)
